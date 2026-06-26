@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Physiological Insights Vault — Julio Mendez</title>
+
+    <!-- Dedicated Editorial Stylesheet -->
+    <link rel="stylesheet" href="css/blog.css" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-wrap">
+            <div class="logo-wrapper">
+                <a href="../index.html">
+                    <img src="blog/images/logo.png" class="logo" alt="Julio Mendez Physical Refinement Logo" />
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="videos.html">Videos</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="justfun.html">Just Fun</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO & SEARCH CONSOLE -->
+        <section class="vault-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="eyebrow">Clinical &amp; Biomechanical Library</span>
+                    <h1 class="vault-title">The Physiological Vault</h1>
+                    <p class="vault-desc">
+                        Evidence-based research publications exploring metabolic efficiency, sarcopenia reversal, joint
+                        longevity, and systemic athletic performance.
+                    </p>
+
+                    <div class="search-container">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="searchInput" class="search-input"
+                            placeholder="Search research by keyword, lipid, or training topic..." autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTIVE INSIGHTS GRID (4 Columns Uniform Card Architecture) -->
+        <section class="insights-section">
+            <div class="container">
+                <div class="section-label">Featured Clinical Breakdowns</div>
+
+                <!-- No Results Console -->
+                <div id="noResults" class="no-results">
+                    No matching physiological research articles or archive records found.
+                </div>
+
+                <div class="blog-grid" id="searchableGrid">
+
+                    <!-- Card 1 -->
+                    <a href="blog/Healthy-After-40.html" class="blog-card searchable-item" data-category="Physiology">
+                        <div class="card-image-wrap">
+                            <img src="blog/images/2019BikeMachine.JPG" class="card-image"
+                                alt="Healthy After 40 Conditioning" />
+                            <span class="category-tag">Physiology</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Healthy &amp; Fit After 40 Is NOT About The Fitness</h3>
+                            <p class="card-summary">
+                                Many believe physical decline after age 40 is dictated by metabolism. The true
+                                physiological barrier is consistency, recovery capacity, and intentional mindset
+                                engineering.
+                            </p>
+                            <div class="card-meta">
+                                <span>By Julio Mendez</span>
+                                <span>May 30, 2026</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 2 -->
+                    <a href="blog/Lets-Ride-Bike.html" class="blog-card searchable-item" data-category="Biomechanics">
+                        <div class="card-image-wrap">
+                            <img src="blog/images/SittingFit.JPG" class="card-image"
+                                alt="Low Impact Cycling Biomechanics" />
+                            <span class="category-tag">Biomechanics</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">HEY Over 40: The Biomechanics of Cycling</h3>
+                            <p class="card-summary">
+                                At age 42, I integrated cycling to build cardiorespiratory endurance without placing
+                                heavy impact on my knees and lower back. Discover how low-impact leg drive supports
+                                hypertrophy.
+                            </p>
+                            <div class="card-meta">
+                                <span>By Julio Mendez</span>
+                                <span>May 31, 2026</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 3 -->
+                    <a href="blog/Carnivore.html" class="blog-card searchable-item" data-category="Biochemistry">
+                        <div class="card-image-wrap">
+                            <img src="blog/images/steak.jpg" class="card-image" alt="Carnivore Diet Lipid Analysis" />
+                            <span class="category-tag">Biochemistry</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Carnivore Facts: Honeymoon vs. Plaque Reality</h3>
+                            <p class="card-summary">
+                                The carnivore elimination phase drives rapid ketosis and drops systemic inflammation.
+                                However, long-term saturated fat overload can downregulate hepatic LDL receptors in lean
+                                hyper-responders.
+                            </p>
+                            <div class="card-meta">
+                                <span>By Julio Mendez</span>
+                                <span>June 18, 2026</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 4 -->
+                    <a href="blog/Brain-Training.html" class="blog-card searchable-item" data-category="Neurobiology">
+                        <div class="card-image-wrap">
+                            <img src="blog/images/Brain1.jpg" class="card-image" alt="Muscle Brain Endocrine Axis" />
+                            <span class="category-tag">Neurobiology</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Brain Training Facts: The Muscle-Brain Axis</h3>
+                            <p class="card-summary">
+                                Trade crossword puzzles for dumbbells. Clinical research proves skeletal muscle acts as
+                                an endocrine organ, releasing myokines like BDNF that directly drive hippocampal
+                                neurogenesis.
+                            </p>
+                            <div class="card-meta">
+                                <span>By Julio Mendez</span>
+                                <span>June 20, 2026</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 5 (Archived Release Rendered in Grid) -->
+                    <a href="blog/Healthy-After-40.html" class="blog-card searchable-item" data-category="Metabolism">
+                        <div class="card-image-wrap">
+                            <img src="../images/1wkpump.jpg" class="card-image"
+                                alt="Metabolic Adaptation in Deficits" />
+                            <span class="category-tag">Metabolism</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Metabolic Adaptation During Aggressive Deficits</h3>
+                            <p class="card-summary">
+                                How comparative physiology explains the downregulation of thyroid hormones (T3/T4)
+                                during extended caloric restriction, and how to preserve basal metabolic rate.
+                            </p>
+                            <div class="card-meta">
+                                <span>By Julio Mendez</span>
+                                <span>April 14, 2026</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 6 -->
+                    <a href="blog/Lets-Ride-Bike.html" class="blog-card searchable-item" data-category="Hypertrophy">
+                        <div class="card-image-wrap">
+                            <img src="../images/1wkpump2.jpg" class="card-image" alt="Tendon Longevity Heavy Lifting" />
+                            <span class="category-tag">Hypertrophy</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Tendon Longevity Under Heavy Compound Loads</h3>
+                            <p class="card-summary">
+                                Muscular tissue recovers faster than dense collagenous ligaments. Mapping training
+                                frequency to connective tissue recovery cycles prevents rupture and joint inflammation.
+                            </p>
+                            <div class="card-meta">
+                                <span>By Julio Mendez</span>
+                                <span>March 02, 2026</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 7 -->
+                    <a href="blog/Brain-Training.html" class="blog-card searchable-item" data-category="Recovery">
+                        <div class="card-image-wrap">
+                            <img src="blog/images/Brain1.jpg" class="card-image"
+                                alt="Glymphatic System Sleep Cleansing" />
+                            <span class="category-tag">Recovery</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Deep REM Cycles &amp; Glymphatic Brain Cleansing</h3>
+                            <p class="card-summary">
+                                While resistance training builds cognitive reserve, deep slow-wave sleep powers the
+                                literal metabolic dishwasher that clears toxic beta-amyloid proteins.
+                            </p>
+                            <div class="card-meta">
+                                <span>By Julio Mendez</span>
+                                <span>February 19, 2026</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 8 -->
+                    <a href="blog/Carnivore.html" class="blog-card searchable-item" data-category="Nutrition">
+                        <div class="card-image-wrap">
+                            <img src="../images/Bacon.jpg" class="card-image"
+                                alt="Micronutrient Gaps Elimination Diets" />
+                            <span class="category-tag">Nutrition</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Micronutrient Gaps in Aggressive Diets</h3>
+                            <p class="card-summary">
+                                Analyzing folate, calcium, and magnesium retention when eliminating plant fibers. Why
+                                organ meats like beef liver are non-negotiable for biochemical equilibrium.
+                            </p>
+                            <div class="card-meta">
+                                <span>By Julio Mendez</span>
+                                <span>January 11, 2026</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SLEEK ARCHIVE DECK (Historical Publications Vault) -->
+        <section class="archive-section">
+            <div class="container">
+                <div class="section-label">Archived Research Releases</div>
+
+                <div class="archive-deck" id="searchableArchive">
+
+                    <a href="blog/Healthy-After-40.html" class="archive-row searchable-item" data-category="Physiology">
+                        <div class="archive-left">
+                            <span class="archive-date">DEC 2025</span>
+                            <span class="archive-title">Understanding Comparative Physiology in Master's
+                                Bodybuilding</span>
+                        </div>
+                        <div class="archive-right">
+                            <span class="archive-cat">Physiology</span>
+                            <span class="archive-arrow">→</span>
+                        </div>
+                    </a>
+
+                    <a href="blog/Carnivore.html" class="archive-row searchable-item" data-category="Chemistry">
+                        <div class="archive-left">
+                            <span class="archive-date">OCT 2025</span>
+                            <span class="archive-title">The Chemistry of Medicinal Hydration &amp; Electrolyte
+                                Retention</span>
+                        </div>
+                        <div class="archive-right">
+                            <span class="archive-cat">Chemistry</span>
+                            <span class="archive-arrow">→</span>
+                        </div>
+                    </a>
+
+                    <a href="blog/Lets-Ride-Bike.html" class="archive-row searchable-item" data-category="Strength">
+                        <div class="archive-left">
+                            <span class="archive-date">AUG 2025</span>
+                            <span class="archive-title">Vo-Tech Principles: Eliminating Fluff from Your Weight
+                                Training</span>
+                        </div>
+                        <div class="archive-right">
+                            <span class="archive-cat">Strength</span>
+                            <span class="archive-arrow">→</span>
+                        </div>
+                    </a>
+
+                    <a href="blog/Healthy-After-40.html" class="archive-row searchable-item"
+                        data-category="Conditioning">
+                        <div class="archive-left">
+                            <span class="archive-date">MAY 2025</span>
+                            <span class="archive-title">Las Vegas Summers: Cardiorespiratory Adaptation in Extreme
+                                Heat</span>
+                        </div>
+                        <div class="archive-right">
+                            <span class="archive-cat">Conditioning</span>
+                            <span class="archive-arrow">→</span>
+                        </div>
+                    </a>
+
+                    <a href="blog/Brain-Training.html" class="archive-row searchable-item" data-category="Neurobiology">
+                        <div class="archive-left">
+                            <span class="archive-date">JAN 2025</span>
+                            <span class="archive-title">Sarcopenia Prevention as the Ultimate Longevity Strategy</span>
+                        </div>
+                        <div class="archive-right">
+                            <span class="archive-cat">Neurobiology</span>
+                            <span class="archive-arrow">→</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- INSTANT CLIENT-SIDE SEARCH ENGINE -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchInput = document.getElementById("searchInput");
+            const searchableItems = document.querySelectorAll(".searchable-item");
+            const noResultsBanner = document.getElementById("noResults");
+
+            searchInput.addEventListener("input", (e) => {
+                const query = e.target.value.toLowerCase().trim();
+                let matchesCount = 0;
+
+                searchableItems.forEach((item) => {
+                    const textContent = item.textContent.toLowerCase();
+                    const category = item.getAttribute("data-category") ? item.getAttribute("data-category").toLowerCase() : "";
+
+                    if (textContent.includes(query) || category.includes(query)) {
+                        item.classList.remove("hidden");
+                        matchesCount++;
+                    } else {
+                        item.classList.add("hidden");
+                    }
+                });
+
+                // Toggle Empty State Console
+                if (matchesCount === 0) {
+                    noResultsBanner.style.display = "block";
+                } else {
+                    noResultsBanner.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="blog/images/logo.png" alt="Julio Mendez Physical Refinement Logo" />
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="contact.html">Contact Support</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="affiliate-info">
+                    Affiliate Disclosure: In accordance with standard compliance guidelines, some fitness or compound
+                    recommendations on this portal may contain tracking/affiliate links. I only endorse equipment and
+                    nutritional agents that align strictly with biochemistry and safe performance.
+                </div>
+                <div>
+                    &copy; 2026 Julio Mendez. All Performance Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
