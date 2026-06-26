@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elite Performance Intake — Julio Mendez</title>
+
+    <!-- Balanced Unified Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/contact.css" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-wrap">
+            <div class="logo-wrapper">
+                <a href="../">
+                    <img src="../assets/images/logo.png" class="logo" alt="Julio Mendez Physical Refinement Logo" />
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="../">Home</a>
+                <a href="../blog/">Blog</a>
+                <a href="../videos/">Videos</a>
+                <a href="../about/">About</a>
+                <a href="../contact/" class="active">Contact</a>
+                <a href="../justfun/">Just Fun</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container contact-layout">
+
+            <!-- LEFT COLUMN: INTAKE PROTOCOLS -->
+            <aside class="guidelines-panel">
+                <h3>Application Guidelines</h3>
+                <p>
+                    Before submitting your intake application, please review the requirements of my coaching
+                    methodologies to confirm alignment.
+                </p>
+
+                <ul class="guidelines-list">
+                    <li>
+                        <strong>Expected Response Window:</strong> Evaluated submissions will receive a diagnostic
+                        response inside your inbox within 24 hours.
+                    </li>
+                    <li>
+                        <strong>Physical Accountability:</strong> High-ticket coaching requires consistent tracking of
+                        structural metrics, bio-feedback, and active progression records.
+                    </li>
+                    <li>
+                        <strong>Evidence-Based Foundation:</strong> Every training path and macro target is built
+                        exclusively around verified biochemistry and safe mechanical patterns.
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- RIGHT COLUMN: THE SECURE FORM -->
+            <section class="coaching-form-card">
+                <h2>Intake Application</h2>
+                <p>Provide your performance metrics below to securely link your application to our diagnostic sheets.
+                </p>
+
+                <form id="fitnessCoachingForm">
+
+                    <!-- Invisible Spam Trap (Honeypot) -->
+                    <input type="text" name="clientWebsite" id="clientWebsite" tabindex="-1" autocomplete="off"
+                        style="display: none !important;" />
+
+                    <!-- Name Field -->
+                    <div class="form-group">
+                        <label for="clientName">Full Name</label>
+                        <input type="text" id="clientName" name="clientName" class="form-control"
+                            placeholder="e.g. John Doe" required />
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="clientEmail">Email Address</label>
+                        <input type="email" id="clientEmail" name="clientEmail" class="form-control"
+                            placeholder="e.g. j.doe@domain.com" required />
+                    </div>
+
+                    <!-- Optional Phone -->
+                    <div class="form-group">
+                        <label for="clientPhone">Phone Number (Optional)</label>
+                        <input type="tel" id="clientPhone" name="clientPhone" class="form-control"
+                            placeholder="e.g. +1 (702) 555-0199" />
+                    </div>
+
+                    <!-- Training Experience Select -->
+                    <div class="form-group">
+                        <label for="clientExperience">Training Experience Level</label>
+                        <select id="clientExperience" name="clientExperience" class="form-control" required>
+                            <option value="" disabled selected>Select your current status...</option>
+                            <option value="Beginner (0-1 Years)">Beginner (0 - 1 Years)</option>
+                            <option value="Intermediate (1-3 Years)">Intermediate (1 - 3 Years)</option>
+                            <option value="Advanced (3+ Years)">Advanced (3+ Years)</option>
+                            <option value="Competitive Athlete">Competitive Athlete</option>
+                        </select>
+                    </div>
+
+                    <!-- Goal Text Area -->
+                    <div class="form-group">
+                        <label for="clientGoal">What is your primary fitness goal?</label>
+                        <textarea id="clientGoal" name="clientGoal" class="form-control"
+                            placeholder="Provide specific metrics: desired muscle development, target conditioning rates, or historical joint complications..."
+                            required></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submitBtn" class="submit-btn">
+                        Submit Application ✦
+                    </button>
+
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FORM SCRIPT INTEGRATION -->
+    <script>
+        document.getElementById("fitnessCoachingForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Halt standard refresh behaviors
+
+            const form = this;
+            const btn = document.getElementById("submitBtn");
+
+            // 1. FRONTEND SPAM CHECK (Honeypot Trap)
+            // If the visually hidden input was filled out, act like it succeeded 
+            // but drop the execution without hitting the Google Web App.
+            const honeypot = document.getElementById("clientWebsite").value;
+            if (honeypot.trim() !== "") {
+                btn.textContent = "Application Received! ✦";
+                btn.disabled = true;
+                form.reset();
+                return;
+            }
+
+            // 2. RETRIEVE FORM PARAMS
+            const formData = new FormData(form);
+            const searchParams = new URLSearchParams();
+
+            for (const pair of formData) {
+                searchParams.append(pair[0], pair[1]);
+            }
+
+            // Change button state to loading
+            btn.textContent = "Encrypting and Sending Securely...";
+            btn.disabled = true;
+
+            // 3. EXECUTE FETCH INVOCATION TO GOOGLE SHEET
+            // Paste your exact Web App URL in the quote field below
+            const GOOGLE_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwyEjzVGs_Rj-6WOyBGi-1DpY1sx34doJ5gspfJt2ORraTSCq5Wc7f5MQq6z6ru275IqA/exec";
+
+            fetch(GOOGLE_WEB_APP_URL, {
+                method: "POST",
+                body: searchParams,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === "success") {
+                        btn.textContent = "Application Received! ✦";
+                        form.reset(); // Safely clear form values
+                    } else {
+                        btn.textContent = "Submission Error. Try Again.";
+                        btn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    console.error("Transmission Error:", error);
+                    btn.textContent = "Network Error. Try Again.";
+                    btn.disabled = false;
+                });
+        });
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="../assets/images/logo.png" alt="Julio Mendez Physical Refinement Logo" />
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="../contact/">Contact Support</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="affiliate-info">
+                    Affiliate Disclosure: In accordance with standard compliance guidelines, some fitness or compound
+                    recommendations on this portal may contain tracking/affiliate links. I only endorse equipment and
+                    nutritional agents that align strictly with biochemistry and safe performance.
+                </div>
+                <div>
+                    &copy; 2026 Julio Mendez. All Performance Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

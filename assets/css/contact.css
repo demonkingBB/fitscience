@@ -1,0 +1,180 @@
+/* ==========================================================================
+   FORM WRAPPER & CONTROL GRID
+   ========================================================================== */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 48px;
+    padding: 80px 0;
+    align-items: start;
+}
+
+/* Guidelines Sidebar Card */
+.guidelines-panel {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius);
+    padding: 36px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.guidelines-panel h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--accent-gold);
+}
+
+.guidelines-panel p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 20px;
+}
+
+.guidelines-list {
+    list-style: none;
+    padding: 0;
+}
+
+.guidelines-list li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.guidelines-list li::before {
+    content: "✦";
+    color: var(--accent-gold);
+    font-size: 0.75rem;
+    margin-top: 2px;
+}
+
+/* Interactive Form Engine Wrapper */
+.coaching-form-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-silver);
+    border-radius: var(--border-radius);
+    padding: 48px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.coaching-form-card h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+}
+
+.coaching-form-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+}
+
+/* Form Groups & Premium Fields */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+}
+
+.form-control {
+    width: 100%;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 14px 18px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+.form-control:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.15);
+    background-color: var(--bg-primary);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Custom Styled Select Element */
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%238A8D9A' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+/* Application Submit Button */
+.submit-btn {
+    width: 100%;
+    background-color: var(--accent-gold);
+    color: #121214;
+    border: 1px solid var(--accent-gold);
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: var(--transition-smooth);
+    margin-top: 8px;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background-color: #E6C14A;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
+}
+
+.submit-btn:disabled {
+    background-color: var(--bg-tertiary);
+    border-color: var(--border-subtle);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ==========================================================================
+   MOBILE-FIRST COLLAPSE RULES
+   ========================================================================== */
+@media (max-width: 991px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    header .header-wrap {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .coaching-form-card {
+        padding: 32px 24px;
+    }
+}
