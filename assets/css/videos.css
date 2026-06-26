@@ -1,0 +1,134 @@
+/* ==========================================================================
+   VIDEO HUB LAYOUT (Symmetric Grid / Alternative Alignment)
+   ========================================================================== */
+.video-hero {
+    padding: 80px 0 48px 0;
+    text-align: center;
+    background: radial-gradient(circle at top center, rgba(212, 175, 55, 0.05), transparent 50%);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.video-hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+}
+
+.video-hero p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+/* Symmetric Alternative Row Feed */
+.video-feed {
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    /* Uniform clean breathing room */
+}
+
+.video-row {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    /* Perfectly balanced spacing gap */
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius);
+    padding: 32px;
+    transition: var(--transition-smooth);
+}
+
+.video-row:hover {
+    border-color: rgba(212, 175, 55, 0.2);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+
+/* Alternating Direction Logic for Symmetry */
+.video-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Widescreen Media Blocks */
+.video-frame-container {
+    flex: 1.2;
+    /* Mathematical distribution: 55% frame, 45% copy */
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-silver);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.video-frame-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* Typography and Metadata Panel */
+.video-copy-panel {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.video-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.video-row h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.video-row p {
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.65;
+}
+
+/* ==========================================================================
+   MOBILE-FIRST BREAKPOINTS (Collapsing Symmetry)
+   ========================================================================== */
+@media (max-width: 991px) {
+    .video-row {
+        gap: 32px;
+        padding: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .video-row,
+    .video-row:nth-child(even) {
+        flex-direction: column;
+        /* Force clean vertical stack on tablets/phones */
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .video-frame-container {
+        width: 100%;
+    }
+
+    .video-copy-panel {
+        text-align: left;
+    }
+}
