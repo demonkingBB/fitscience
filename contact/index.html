@@ -126,14 +126,12 @@
     <!-- FORM SCRIPT INTEGRATION -->
     <script>
         document.getElementById("fitnessCoachingForm").addEventListener("submit", function (e) {
-            e.preventDefault(); // Halt standard refresh behaviors
+            e.preventDefault(); // Stop the page from refreshing automatically
 
             const form = this;
             const btn = document.getElementById("submitBtn");
 
-            // 1. FRONTEND SPAM CHECK (Honeypot Trap)
-            // If the visually hidden input was filled out, act like it succeeded 
-            // but drop the execution without hitting the Google Web App.
+            // 1. HONEYPOT SPAM TRAP
             const honeypot = document.getElementById("clientWebsite").value;
             if (honeypot.trim() !== "") {
                 btn.textContent = "Application Received! ✦";
@@ -142,7 +140,7 @@
                 return;
             }
 
-            // 2. RETRIEVE FORM PARAMS
+            // 2. PACKAGE FORM DATA
             const formData = new FormData(form);
             const searchParams = new URLSearchParams();
 
@@ -150,18 +148,17 @@
                 searchParams.append(pair[0], pair[1]);
             }
 
-            // Change button state to loading
+            // Change button state to visual loading
             btn.textContent = "Encrypting and Sending Securely...";
             btn.disabled = true;
 
-            // 3. EXECUTE FETCH INVOCATION TO GOOGLE SHEET
-            // Paste your exact Web App URL in the quote field below
-            const GOOGLE_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyRkBqEXsRCFHNricP7PXE20JDfjFKYWGp025Vo_GpJKh2QS2kIpXJdof1Q14VdkWv6rw/exec";
+            // 3. SECURE NETWORK FETCH TO GOOGLE SHEET
+            const GOOGLE_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxXrenPOq2RbEMTaOMu3cKSlRKbLbMNgjNwteS5Q-DjN2JKMpvPa9IAWkaMDLEl1nPJ1Q/exec";
 
             fetch(GOOGLE_WEB_APP_URL, {
                 method: "POST",
-                mode: "cors", // Explicitly enable Cross-Origin Resource Sharing
-                redirect: "follow", // Force the browser to follow Google's internal redirection
+                mode: "cors",
+                redirect: "follow",
                 body: searchParams,
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded"
@@ -171,7 +168,7 @@
                 .then(data => {
                     if (data.status === "success") {
                         btn.textContent = "Application Received! ✦";
-                        form.reset(); // Safely clear form values
+                        form.reset(); // Safely clear form values on successful drop
                     } else {
                         btn.textContent = "Submission Error. Try Again.";
                         btn.disabled = false;
@@ -183,6 +180,7 @@
                     btn.disabled = false;
                 });
         });
+    </script>
     </script>
 
     <!-- FOOTER -->
