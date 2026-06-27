@@ -1,0 +1,182 @@
+/* ==========================================================================
+   ARTICLE SYSTEM TYPOGRAPHY & LAYOUT
+   ========================================================================== */
+.article-post {
+    max-width: 1000px;
+    /* Constrains media and header elements */
+    margin: 60px auto;
+    padding: 0 24px;
+}
+
+.post-header {
+    max-width: 720px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+.category-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+}
+
+.post-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.post-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+}
+
+.post-meta .divider {
+    color: var(--border-subtle);
+}
+
+/* Featured Media Elements */
+.featured-image-wrapper {
+    margin: 40px auto;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.featured-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Precise Reading Column (The 680px standard) */
+.post-content {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.post-content p {
+    color: var(--text-secondary);
+    font-size: 1.08rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+.post-content .lead-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    margin-bottom: 32px;
+}
+
+/* Editorial Subheadings */
+.post-content h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 48px;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.post-content h2::before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 24px;
+    background-color: var(--accent-gold);
+    border-radius: 2px;
+}
+
+.post-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+
+/* Premium Callout Block System */
+.callout-box {
+    background-color: var(--bg-secondary);
+    border-left: 3px solid var(--accent-gold);
+    border-radius: 0 8px 8px 0;
+    padding: 28px;
+    margin: 40px 0;
+    border-top: 1px solid var(--border-subtle);
+    border-right: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.callout-box h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+}
+
+.callout-box p {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+}
+
+.callout-box p:last-child {
+    margin-bottom: 0;
+}
+
+.callout-box ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.callout-box li {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   MOBILE SCALING
+   ========================================================================== */
+@media (max-width: 768px) {
+    .article-post {
+        margin: 40px auto;
+    }
+
+    .post-title {
+        font-size: 1.8rem;
+    }
+
+    .post-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    .callout-box {
+        padding: 20px;
+    }
+}
